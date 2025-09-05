@@ -39,5 +39,6 @@ Stop-Process -Name "RocketLeague" -Force -ErrorAction SilentlyContinue
 Start-Sleep -Seconds 1
 
 $timer.Start()
-$form.ShowDialog()
 $player.Play()
+$form.ShowDialog()
+
