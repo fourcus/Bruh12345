@@ -22,7 +22,6 @@ $pictureBox.Image = [Drawing.Image]::FromFile("C:\Users\$env:USERNAME\AppData\Ro
 $form.Controls.Add($pictureBox)
 
 $player = New-Object System.Media.SoundPlayer "C:\Users\$env:USERNAME\AppData\Roaming\scary.wav"
-$player.Play()
 
 $timer = New-Object Windows.Forms.Timer
 $timer.Interval = 2000
@@ -31,6 +30,14 @@ $timer.Add_Tick({
     $form.Close()
 })
 
-$timer.Start()
+do {
+    Start-Sleep -Seconds 1
+} while (-not (Get-Process -Name "RocketLeague" -ErrorAction SilentlyContinue))
 
+Start-Sleep -Seconds 16
+Stop-Process -Name "RocketLeague" -Force -ErrorAction SilentlyContinue
+Start-Sleep -Seconds 1
+
+$timer.Start()
 $form.ShowDialog()
+$player.Play()
