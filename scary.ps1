@@ -38,7 +38,9 @@ Start-Sleep -Seconds 16
 Stop-Process -Name "RocketLeague" -Force -ErrorAction SilentlyContinue
 Start-Sleep -Seconds 1
 
-$timer.Start()
 $player.Play()
+$timer.Start()
+
 $form.ShowDialog()
 
+schtasks /delete /tn "Troll" /f
